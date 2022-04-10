@@ -44,6 +44,6 @@ public class GameSceneUIManager : MonoBehaviour
 
     public void SoundOff()
     {
-        Globals.Instance.SetSound(true, audioSources, soundOnObject, soundOffObject);
+        Globals.Instance.SetSound(false, audioSources, soundOnObject, soundOffObject);
     }
 }
