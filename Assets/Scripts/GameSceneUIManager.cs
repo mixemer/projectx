@@ -5,7 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneUIManager : MonoBehaviour
 {
-    [SerializeField] AudioListener audiolistener;
+    [SerializeField] GameObject soundOnObject;
+    [SerializeField] GameObject soundOffObject;
+
+    AudioSource[] audioSources;
+
+    private void Start()
+    {
+        audioSources = FindObjectsOfType<AudioSource>();
+        Debug.Log(audioSources.Length);
+
+        if (PlayerPrefs.HasKey(Globals.SOUND_KEY))
+        {
+            bool soundOn = PlayerPrefs.GetInt(Globals.SOUND_KEY) == 1 ? true : false;
+            Globals.Instance.SetSound(soundOn, audioSources, soundOnObject, soundOffObject);
+        }
+    }
 
     public void LoadMenuScene()
     {
@@ -22,15 +37,13 @@ public class GameSceneUIManager : MonoBehaviour
     }
 
 
-    // TODO: Add PlayerPrefs
     public void SoundOn()
     {
-        audiolistener.enabled = true;
+        Globals.Instance.SetSound(true, audioSources, soundOnObject, soundOffObject);
     }
 
-    // TODO: Add PlayerPrefs
     public void SoundOff()
     {
-        audiolistener.enabled = false;
+        Globals.Instance.SetSound(true, audioSources, soundOnObject, soundOffObject);
     }
 }
