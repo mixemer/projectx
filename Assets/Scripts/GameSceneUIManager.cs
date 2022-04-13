@@ -13,7 +13,7 @@ public class GameSceneUIManager : MonoBehaviour
     private void Start()
     {
         audioSources = FindObjectsOfType<AudioSource>();
-        Debug.Log(audioSources.Length);
+        Time.timeScale = 1;
 
         if (PlayerPrefs.HasKey(Globals.SOUND_KEY))
         {
