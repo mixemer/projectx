@@ -28,6 +28,7 @@ public class Drop : MonoBehaviour
         }
         else if (collision.CompareTag("Player"))
         {
+            spawner.count--;
             collision.GetComponent<Player>().Heal(isFood ? 5 : -2);
             Destroy(gameObject);
         }
