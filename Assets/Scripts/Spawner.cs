@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour
     public int maxCount = 20;
     public int count = 0;
 
+    public GameSceneManager sceneManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,8 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
+
+
         int fort = Random.Range(0, 2);
         Vector3 randomPos = RandomPointInBounds(collider2D.bounds);
 
