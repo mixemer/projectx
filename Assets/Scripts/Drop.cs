@@ -6,11 +6,13 @@ public class Drop : MonoBehaviour
 {
     public bool isFood = true;
     public Spawner spawner;
+    public Rigidbody2D rigidbody2D;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2D.AddTorque(20f);
     }
 
     // Update is called once per frame
@@ -23,12 +25,12 @@ public class Drop : MonoBehaviour
     {
         if (collision.CompareTag("BottomCollider"))
         {
-            spawner.count--;
+            spawner.DescreaseCount(isFood);
             Destroy(gameObject);
         }
         else if (collision.CompareTag("Player"))
         {
-            spawner.count--;
+            spawner.DescreaseCount(isFood);
             collision.GetComponent<Player>().Heal(isFood ? 5 : -2);
             Destroy(gameObject);
         }

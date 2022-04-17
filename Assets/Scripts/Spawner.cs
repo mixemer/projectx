@@ -8,8 +8,11 @@ public class Spawner : MonoBehaviour
     public GameObject[] food;
     public GameObject[] trash;
 
-    public int maxCount = 20;
-    public int count = 0;
+    public int maxFoodCount = 20;
+    public int maxTrashCount = 20;
+
+    public int foodCount = 0;
+    public int trashCount = 0;
 
     public GameSceneManager sceneManager;
 
@@ -21,31 +24,58 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-
-
         int fort = Random.Range(0, 2);
         Vector3 randomPos = RandomPointInBounds(collider2D.bounds);
 
-        if (food.Length == 0) return;
-        if (count >= maxCount) return;
+        GameObject o;
 
-        int i = Random.Range(0, food.Length);
-        GameObject o = Instantiate(food[i], randomPos, Quaternion.identity);
-        o.GetComponent<Drop>().spawner = this;
-        count++;
-
-/*        if (fort == 0)
+        if (fort == 0)
         {
             if (food.Length == 0) return;
+            if (foodCount >= maxFoodCount) return;
 
             int i = Random.Range(0, food.Length);
-
-        } else
+            o = Instantiate(food[i], randomPos, Quaternion.identity);
+            o.GetComponent<Drop>().spawner = this;
+            foodCount++;
+        }
+        else
         {
             if (trash.Length == 0) return;
+            if (trashCount >= maxTrashCount) return;
 
             int i = Random.Range(0, trash.Length);
-        }*/
+            o = Instantiate(trash[i], randomPos, Quaternion.identity);
+            o.GetComponent<Drop>().spawner = this;
+            trashCount++;
+        }
+
+        o.GetComponent<Drop>().spawner = this;
+    }
+
+    private void Update()
+    {
+        SetFoodAndTrashCount();
+    }
+
+    void SetFoodAndTrashCount()
+    {
+        // TODO: be smarter about this
+        if (sceneManager.gameStage == GameSceneManager.GameStage.Starting)
+        {
+            maxFoodCount = 20;
+            maxTrashCount = 0;
+        }
+        if (sceneManager.gameStage == GameSceneManager.GameStage.Mid)
+        {
+            maxFoodCount = 10;
+            maxTrashCount = 10;
+        }
+        if (sceneManager.gameStage == GameSceneManager.GameStage.Ending)
+        {
+            maxFoodCount = 5;
+            maxTrashCount = 20;
+        }
     }
 
     public static Vector3 RandomPointInBounds(Bounds bounds)
@@ -57,4 +87,14 @@ public class Spawner : MonoBehaviour
         );
     }
 
+    public void DescreaseCount(bool isFood)
+    {
+        if (isFood)
+        {
+            foodCount--;
+        } else
+        {
+            trashCount--;
+        }
+    }
 }
