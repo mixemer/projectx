@@ -1,19 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class CharacterManager : MonoBehaviour
 {
     public CharacterDatabase characterDB;
 
     public SpriteRenderer artworkSprite;
 
     private int selectedOption = 0;
-
-    public string name;
-    public int hp;
-
-    public float hpDecreaseRate = 0.4f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,31 +24,30 @@ public class Player : MonoBehaviour
             Load();
         }
         UpdateCharacter(selectedOption);
-
-        hp = 100;
-        InvokeRepeating("DecreaseHP", 1f, hpDecreaseRate);
     }
 
-    public void Heal(int amount)
+    public void NextOption()
     {
-        if (hp >= 100)
-        {
-            hp = 100;
-            return;
-        }
+        selectedOption++;
 
-        hp += amount;
+        if (selectedOption >= characterDB.CharacterCount)
+        {
+            selectedOption = 0;
+        }
+        UpdateCharacter(selectedOption);
+        Save();
     }
 
-    void DecreaseHP()
+    public void BackOption()
     {
-        if (hp < 0)
-        {
-            hp = 0;
-            return;
-        }
+        selectedOption--;
 
-        hp -= 1;
+        if (selectedOption < 0)
+        {
+            selectedOption = characterDB.CharacterCount - 1;
+        }
+        UpdateCharacter(selectedOption);
+        Save();
     }
 
     private void UpdateCharacter(int selectedOption)
@@ -64,5 +60,15 @@ public class Player : MonoBehaviour
     private void Load()
     {
         selectedOption = PlayerPrefs.GetInt("selectedOption");
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetInt("selectedOption", selectedOption);
+    }
+
+    public void ChangeScene(int sceneID)
+    {
+        SceneManager.LoadScene(sceneID);
     }
 }

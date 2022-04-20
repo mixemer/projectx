@@ -36,4 +36,11 @@ public class MenuSceneManager : MonoBehaviour
     {
         Globals.Instance.SetSound(false, audioSources, soundOnObject, soundOffObject);
     }
+
+    public void ExitButton()
+    {
+        Application.Quit();
+        Debug.Log("Game Closed");
+    }
+
 }
