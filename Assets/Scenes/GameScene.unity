@@ -10625,7 +10625,7 @@ MonoBehaviour:
   artworkSprite: {fileID: 500595046}
   name: 
   hp: 0
-  hpDecreaseRate: 0
+  hpDecreaseRate: 0.9
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
