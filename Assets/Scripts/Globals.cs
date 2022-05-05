@@ -8,6 +8,9 @@ public class Globals : MonoBehaviour
 
     public const string SOUND_KEY = "sound_on";
 
+    public const string coralAliveDetails = "";
+    public const string coralDeadDetails = "";
+
     private void Awake()
     {
         if (Instance == null)
