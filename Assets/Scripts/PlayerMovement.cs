@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
-        movement = new Vector2(xInput * speed.x, yInput * speed.y);
+        movement = new Vector2(xInput * speed.x * Time.deltaTime, yInput * speed.y * Time.deltaTime);
 
         RotateHorizontal();
         RotateVertical();
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        body.velocity = movement * Time.fixedDeltaTime;
+        body.velocity = new Vector2(xInput * speed.x * Time.fixedDeltaTime, yInput * speed.y * Time.fixedDeltaTime);
     }
 
     void RotateVertical()
