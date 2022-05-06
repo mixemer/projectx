@@ -57,7 +57,12 @@ namespace CodeMonkey.HealthSystemCM {
         /// Clean up events when this Game Object is destroyed
         /// </summary>
         private void OnDestroy() {
-            healthSystem.OnHealthChanged -= HealthSystem_OnHealthChanged;
+            // Was receiving a NullPointerException in MainMenu
+            if (healthSystem != null) 
+            {
+                healthSystem.OnHealthChanged -= HealthSystem_OnHealthChanged;
+
+            }
         }
 
     }
