@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-
-    /* MENUS */
-    [Header("Music")]
-    [SerializeField] AudioClip gameMusicClip;
-    [SerializeField] [Range(0f, 1f)] float gameMusicVolume = 1f;
-
     [Header("UI Sounds")]
     [SerializeField] AudioClip buttonClickClip;
     [SerializeField] [Range(0f, 1f)] float buttonClickVolume = 1f;
