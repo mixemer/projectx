@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
@@ -17,7 +19,14 @@ public class GameSceneManager : MonoBehaviour
 
     public GameStage gameStage;
 
-    // Start is called before the first frame update
+    private LevelManager levelManager;
+
+    private void Awake()
+    {
+        player = FindObjectOfType<Player>();
+        levelManager = FindObjectOfType<LevelManager>();
+    }
+
     void Start()
     {
         EndGamePanel.SetActive(false);
@@ -29,15 +38,19 @@ public class GameSceneManager : MonoBehaviour
         mid = GameTimerSeconds - GameTimerSeconds / 3 - GameTimerSeconds / 3;
     }
 
-    // Update is called once per frame
     void Update()
     {
         RemaininTimerSeconds -= Time.deltaTime;
         GetGameStage();
-        if (player.hp <= 0)
+        if (player.HealthIsBelowMinimum())
         {
-            Time.timeScale = 0;
-            EndGamePanel.SetActive(true);
+            //Time.timeScale = 0;
+            //EndGamePanel.SetActive(true);
+            levelManager.LoadGaveOverScene();
+            if (player.IsAlive())
+            {
+                player.Kill();
+            }
         }
     }
 

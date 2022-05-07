@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-
-    /* MENUS */
-    [Header("Music")]
-    [SerializeField] AudioClip gameMusicClip;
-    [SerializeField] [Range(0f, 1f)] float gameMusicVolume = 1f;
-
     [Header("UI Sounds")]
     [SerializeField] AudioClip buttonClickClip;
     [SerializeField] [Range(0f, 1f)] float buttonClickVolume = 1f;
@@ -28,27 +22,6 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip toxinContactClip;
     [SerializeField] [Range(0f, 1f)] float toxinContactVolume = 1f;
 
-    /* Shared AudioPlayer Throughout Different Scenes */
-    static AudioPlayer instance;
-
-    private void Awake()
-    {
-        LoadAudioPlayer();
-    }
-
-    private void LoadAudioPlayer()
-    {
-        if (instance != null)
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
 
     private void PlaySound(AudioClip clip, float volume)
     {

@@ -1,21 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player Settings")]
+    [SerializeField] [Range(1, 100)] int minHP = 1;
+    [SerializeField] [Range(1, 100)] int maxHP = 100;
+    [SerializeField] int criticalHP = 20;
+
+    [SerializeField] public GameObject killEffect;
+
     public CharacterDatabase characterDB;
 
     public SpriteRenderer artworkSprite;
 
+
     private int selectedOption = 0;
 
-    public string name;
-    public int hp;
+    private string name;
+    private int hp;
+    private bool playerIsAlive = true;
 
     public float hpDecreaseRate = 0.4f;
 
-    // Start is called before the first frame update
+
+
+    private void Awake()
+    {
+        if (minHP > maxHP)
+        {
+            Debug.LogError("Player: maxHP cannot be greater than minHP");
+        }
+    }
+
     void Start()
     {
         if (!PlayerPrefs.HasKey("selectedOption"))
@@ -28,8 +47,45 @@ public class Player : MonoBehaviour
         }
         UpdateCharacter(selectedOption);
 
-        hp = 100;
+        hp = maxHP;
         InvokeRepeating("DecreaseHP", 1f, hpDecreaseRate);
+    }
+
+    // GETTERS AND SETTERS //
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public void SetName(string name)
+    {
+        this.name = name;
+    }
+
+    public int GetHp()
+    {
+        return hp;
+    }
+
+
+    public void SetHp(int hp)
+    {
+        this.hp = hp;
+    }
+
+
+
+    // HP METHODS //
+
+    public bool HealthIsCritical()
+    {
+        return hp <= criticalHP;
+    }
+
+    public bool HealthIsBelowMinimum()
+    {
+        return hp < minHP;
     }
 
     public void Heal(int amount)
@@ -43,7 +99,7 @@ public class Player : MonoBehaviour
         hp += amount;
     }
 
-    void DecreaseHP()
+    public void DecreaseHP()
     {
         if (hp < 0)
         {
@@ -53,6 +109,24 @@ public class Player : MonoBehaviour
 
         hp -= 1;
     }
+
+    public bool IsAlive()
+    {
+        return playerIsAlive;
+    }
+
+    public void Kill()
+    {
+        if (playerIsAlive)
+        {
+            playerIsAlive = false;
+            GameObject go = Instantiate(killEffect, transform.position, Quaternion.identity);
+            go.transform.localScale = new Vector3(5, 5, 1);
+            Destroy(gameObject);
+        }
+    }
+
+
 
     private void UpdateCharacter(int selectedOption)
     {
