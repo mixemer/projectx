@@ -13,7 +13,6 @@ public class GameSceneUIManager : MonoBehaviour
     private void Start()
     {
         audioSources = FindObjectsOfType<AudioSource>();
-        Time.timeScale = 1;
 
         if (PlayerPrefs.HasKey(Globals.SOUND_KEY))
         {
@@ -29,11 +28,11 @@ public class GameSceneUIManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0;
+        Globals.Instance.FreezeGame();
     }
     public void ResumeGame()
     {
-        Time.timeScale = 1;
+        Globals.Instance.UnFreezeGame();
     }
 
 
