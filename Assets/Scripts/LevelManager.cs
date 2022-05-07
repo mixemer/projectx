@@ -24,6 +24,10 @@ public class LevelManager : MonoBehaviour
     {
         StartCoroutine(WaitAndLoad("MainMenuScene", sceneLoadDelay));
     }
+    public void LoadMainMenuSceneNoDelay()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
 
     public void LoadGaveOverScene()
     {

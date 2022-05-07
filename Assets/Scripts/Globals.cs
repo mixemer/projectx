@@ -37,4 +37,14 @@ public class Globals : MonoBehaviour
         PlayerPrefs.SetInt(SOUND_KEY, val ? 1 : 0);
         PlayerPrefs.Save();
     }
+
+    public void FreezeGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void UnFreezeGame()
+    {
+        Time.timeScale = 1;
+    }
 }
