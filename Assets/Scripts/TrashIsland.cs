@@ -13,6 +13,8 @@ public class TrashIsland : MonoBehaviour
     void Start()
     {
         part1.SetActive(true);
+        part2.SetActive(false);
+        part3.SetActive(false);
     }
 
     // Update is called once per frame
