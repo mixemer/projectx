@@ -44,10 +44,13 @@ public class GameSceneManager : MonoBehaviour
         GetGameStage();
         if (player.HealthIsBelowMinimum())
         {
-            Time.timeScale = 0;
-            EndGamePanel.SetActive(true);
-            //levelManager.LoadGaveOverScene();
-            SceneManager.LoadScene("GameOverScene");
+            //Time.timeScale = 0;
+            //EndGamePanel.SetActive(true);
+            levelManager.LoadGaveOverScene();
+            if (player.IsAlive())
+            {
+                player.Kill();
+            }
         }
     }
 

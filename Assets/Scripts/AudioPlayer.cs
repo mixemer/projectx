@@ -22,27 +22,6 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip toxinContactClip;
     [SerializeField] [Range(0f, 1f)] float toxinContactVolume = 1f;
 
-    /* Shared AudioPlayer Throughout Different Scenes */
-    static AudioPlayer instance;
-
-    private void Awake()
-    {
-        LoadAudioPlayer();
-    }
-
-    private void LoadAudioPlayer()
-    {
-        if (instance != null)
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
 
     private void PlaySound(AudioClip clip, float volume)
     {

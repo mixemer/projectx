@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,17 +10,21 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(1, 100)] int maxHP = 100;
     [SerializeField] int criticalHP = 20;
 
+    [SerializeField] public GameObject killEffect;
 
     public CharacterDatabase characterDB;
 
     public SpriteRenderer artworkSprite;
 
+
     private int selectedOption = 0;
 
     private string name;
     private int hp;
+    private bool playerIsAlive = true;
 
     public float hpDecreaseRate = 0.4f;
+
 
 
     private void Awake()
@@ -63,6 +68,7 @@ public class Player : MonoBehaviour
         return hp;
     }
 
+
     public void SetHp(int hp)
     {
         this.hp = hp;
@@ -103,6 +109,24 @@ public class Player : MonoBehaviour
 
         hp -= 1;
     }
+
+    public bool IsAlive()
+    {
+        return playerIsAlive;
+    }
+
+    public void Kill()
+    {
+        if (playerIsAlive)
+        {
+            playerIsAlive = false;
+            GameObject go = Instantiate(killEffect, transform.position, Quaternion.identity);
+            go.transform.localScale = new Vector3(5, 5, 1);
+            Destroy(gameObject);
+        }
+    }
+
+
 
     private void UpdateCharacter(int selectedOption)
     {
