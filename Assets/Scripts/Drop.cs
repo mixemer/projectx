@@ -26,7 +26,11 @@ public class Drop : MonoBehaviour
         if (collision.CompareTag("BottomCollider"))
         {
             spawner.DescreaseCount(isFood);
-            Destroy(gameObject);
+            rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            if (isFood)
+            {
+                Destroy(gameObject, 3f);
+            }
         }
         else if (collision.CompareTag("Player"))
         {
