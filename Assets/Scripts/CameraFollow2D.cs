@@ -11,10 +11,75 @@ public class CameraFollow2D : MonoBehaviour
 
 
     Vector3 targetPos;
-    // Start is called before the first frame update
+
+
+
+    public float zoom1 = 5;
+    public float zoom2 = 10;
+    private float yOffset = .85f;
+
+    private float minZoom;
+    private float maxZoom;
+
+    public float ypos1;
+    public float ypos2;
+
+    public float duration = 1.0f;
+    private float elapsed = 0.0f;
+    bool transition;
+
+    private void Awake()
+    {
+        minZoom = zoom1;
+        maxZoom = zoom2;
+    }
+
     void Start()
     {
         targetPos = transform.position;
+    }
+
+
+    private void Update()
+    {
+        if (transition)
+        {
+            Zoom(zoom1, zoom2);
+        }
+    }
+
+    private void Zoom(float startOrtagraphicSize, float endOrtagraphicSize)
+    {
+        elapsed += Time.deltaTime / duration;
+        camera.orthographicSize = Mathf.Lerp(startOrtagraphicSize, endOrtagraphicSize, elapsed);
+        if (elapsed > 1.0f)
+        {
+            transition = false;
+            elapsed = 0;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("TopEdge"))
+        {
+            zoom1 = minZoom;
+            zoom2 = maxZoom;
+            offset.y += yOffset;
+            transition = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("TopEdge"))
+        {
+            zoom1 = maxZoom;
+            zoom2 = minZoom;
+            offset.y -= yOffset;
+            transition = true;
+            Debug.Log("Zoom1: " + zoom1 + " Zoom2: " + zoom2);
+        }
     }
 
     // Update is called once per frame
