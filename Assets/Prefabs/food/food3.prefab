@@ -146,8 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFood: 1
-  spawner: {fileID: 0}
-  rigidbody2D: {fileID: 0}
+  canFloat: 1
 --- !u!1 &5918334890443577722
 GameObject:
   m_ObjectHideFlags: 0
