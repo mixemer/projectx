@@ -250,5 +250,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFood: 0
-  spawner: {fileID: 0}
-  rigidbody2D: {fileID: 0}
+  canFloat: 1

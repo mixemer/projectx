@@ -5,38 +5,41 @@ using UnityEngine;
 public class Drop : MonoBehaviour
 {
     public bool isFood = true;
-    public Spawner spawner;
-    public Rigidbody2D rigidbody2D;
+    public bool canFloat = false;
+    Rigidbody2D body;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        rigidbody2D.AddTorque(20f);
-    }
+        body = GetComponent<Rigidbody2D>();
+        body.AddTorque(Random.Range(0f, 1f) > 0.5f ? 20f : -20f);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (canFloat && Random.Range(0f, 1f) > 0.5f)
+        {
+            body.constraints = RigidbodyConstraints2D.FreezeAll;
+            DestroyFoodDelayed(15);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("BottomCollider"))
         {
-            spawner.DescreaseCount(isFood);
-            rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-            if (isFood)
-            {
-                Destroy(gameObject, 3f);
-            }
+            body.constraints = RigidbodyConstraints2D.FreezeAll;
+            DestroyFoodDelayed(3);
         }
         else if (collision.CompareTag("Player"))
         {
-            spawner.DescreaseCount(isFood);
             collision.GetComponent<Player>().Heal(isFood ? 5 : -2);
             Destroy(gameObject);
+        }
+    }
+
+    void DestroyFoodDelayed(float delay)
+    {
+        if (isFood)
+        {
+            Destroy(gameObject, delay);
         }
     }
 }
