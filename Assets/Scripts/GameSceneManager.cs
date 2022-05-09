@@ -50,6 +50,13 @@ public class GameSceneManager : MonoBehaviour
                 player.Kill();
             }
         }
+
+        if(RemaininTimerSeconds < 0)
+        {
+            RemaininTimerSeconds = 0;
+            SceneManager.LoadScene("GameOverScene");
+            Time.timeScale = 0;
+        }
     }
 
     public enum GameStage
