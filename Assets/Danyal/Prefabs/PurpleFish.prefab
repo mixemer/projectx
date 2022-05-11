@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8628803420094253751}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.812, y: -9.524, z: -0.16}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.2
-  leftWorldX: -11.42
-  rightWorldX: 34.68
+  leftWorldX: -20
+  rightWorldX: 75
   pingPong: 1
   wave: 1
   flipWithDirection: 1
@@ -115,4 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadFishSprite: {fileID: 21300000, guid: 2cb946e9c92481248a2dd8ed4db1bc2f, type: 3}
-  maxDeathTime: 0
+  maxDeathTime: 50

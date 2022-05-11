@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.2
-  leftWorldX: -11.42
-  rightWorldX: 34.68
+  leftWorldX: -20
+  rightWorldX: 75
   pingPong: 1
   wave: 1
   flipWithDirection: 1
