@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6656116876728319384}
   - component: {fileID: 7313912089102164518}
+  - component: {fileID: 1750196116351445053}
+  - component: {fileID: 9038832448293498399}
   m_Layer: 0
   m_Name: GrayPinkFish
   m_TagString: Untagged
@@ -24,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5008165254774875185}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2678796, y: 0.14383459, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -46,6 +48,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -70,8 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3275407576765064038, guid: 08a4ea944d8dd4ea1ada9363a03fc25c,
-    type: 3}
+  m_Sprite: {fileID: 3275407576765064038, guid: 08a4ea944d8dd4ea1ada9363a03fc25c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,3 +84,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1750196116351445053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008165254774875185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fceb17e429f45c28a7228af1ed54012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -0.2
+  leftWorldX: -11.42
+  rightWorldX: 34.68
+  pingPong: 1
+  wave: 1
+  flipWithDirection: 1
+--- !u!114 &9038832448293498399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008165254774875185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d248da467e4624746acbb381391bc8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deadFishSprite: {fileID: 21300000, guid: 2cb946e9c92481248a2dd8ed4db1bc2f, type: 3}
+  maxDeathTime: 15
