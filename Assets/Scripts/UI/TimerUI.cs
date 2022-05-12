@@ -17,6 +17,6 @@ public class TimerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = "Timer: "+sceneManager.RemaininTimerSeconds.ToString("F2");
+        textMesh.text = sceneManager.RemaininTimerSeconds.ToString("F2");
     }
 }

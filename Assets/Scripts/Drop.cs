@@ -7,6 +7,12 @@ public class Drop : MonoBehaviour
     public bool isFood = true;
     public bool canFloat = false;
     Rigidbody2D body;
+    Score score;
+
+    private void Awake()
+    {
+        score = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Score>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +36,17 @@ public class Drop : MonoBehaviour
         }
         else if (collision.CompareTag("Player"))
         {
+            // update score
+            if (isFood)
+            {
+                score.increaseScore();
+            } else
+            {
+                score.decreaseScore();
+            }
+
+
+            // update health
             collision.GetComponent<Player>().Heal(isFood ? 5 : -2);
             Destroy(gameObject);
         }

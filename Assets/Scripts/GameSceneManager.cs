@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
+    public GameObject StartGamePanel;
     public GameObject EndGamePanel;
     public Player player;
+
+    public GameObject midLevelPanel;
+    public GameObject endingLevelPanel;
 
     // After this game will be unlivable. in minutes
     public int GameTimer = 3;
@@ -21,6 +25,10 @@ public class GameSceneManager : MonoBehaviour
 
     private LevelManager levelManager;
 
+
+    bool showedMidLevelPanel = false;
+    bool showedEndingLevelPanel = false;
+
     private void Awake()
     {
         player = FindObjectOfType<Player>();
@@ -29,6 +37,7 @@ public class GameSceneManager : MonoBehaviour
 
     void Start()
     {
+        StartGamePanel.SetActive(true);
         EndGamePanel.SetActive(false);
         RemaininTimerSeconds = GameTimer * 60;
 
@@ -55,7 +64,19 @@ public class GameSceneManager : MonoBehaviour
         {
             RemaininTimerSeconds = 0;
             SceneManager.LoadScene("GameWinningScene");
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
+        }
+
+        if (gameStage == GameStage.Mid && !showedMidLevelPanel)
+        {
+            showedMidLevelPanel = true;
+            midLevelPanel.SetActive(true);
+        }
+
+        if (gameStage == GameStage.Ending && !showedEndingLevelPanel)
+        {
+            showedEndingLevelPanel = true;
+            endingLevelPanel.SetActive(true);
         }
     }
 
