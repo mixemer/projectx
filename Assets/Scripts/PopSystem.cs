@@ -9,8 +9,9 @@ public class PopSystem : MonoBehaviour
     public GameObject popUpBox;
     //public Animator animator;
     public TMP_Text popUpText;
+    public float popupTime;
     private string dialog;
-    public bool Active;
+    private bool Active;
 
     private List<string> popUpTexts;
 
@@ -32,6 +33,8 @@ public class PopSystem : MonoBehaviour
         popUpTexts.Add("The largest dead zone ever measured was the size of New Jersey.");
         popUpTexts.Add("There are more microplastic in the ocean than there are stars in the Milky Way.");
         popUpTexts.Add("70% of ocean garbage sinks to the seafloor, so it’s unlikely ever to be able to clean it up.");
+
+        if (popupTime == 0) { popupTime = 5; }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,16 +46,24 @@ public class PopSystem : MonoBehaviour
             popUpText.text = dialog;
 
             Active = true;
+
+            StartCoroutine(PopupDelay());
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private IEnumerator PopupDelay()
     {
-        if (other.CompareTag("Player"))
-        {
-            Active = false;
-            popUpBox.SetActive(false);
-        }
+        Time.timeScale = .001f;
+        float pauseEndTime = Time.realtimeSinceStartup + popupTime;
+
+        while (Time.realtimeSinceStartup < pauseEndTime)
+            yield return 0;
+
+        popUpBox.SetActive(false);
+        Active = false;
+        Time.timeScale = 1;
+
+        yield break;
     }
 
     private string ChooseRandomText()

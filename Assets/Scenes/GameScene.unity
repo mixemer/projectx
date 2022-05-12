@@ -14860,7 +14860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpBox: {fileID: 1520473972}
   popUpText: {fileID: 1251847412}
-  Active: 0
+  popupTime: 0
 --- !u!1 &558008383
 GameObject:
   m_ObjectHideFlags: 0
@@ -28485,7 +28485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpBox: {fileID: 208636304}
   popUpText: {fileID: 2095756589}
-  Active: 0
+  popupTime: 5
 --- !u!4 &1412443553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1703579892675499178, guid: 57c4f1880c3ee48cc98d44a182b89fac, type: 3}
@@ -29839,7 +29839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpBox: {fileID: 208636304}
   popUpText: {fileID: 2095756589}
-  Active: 0
+  popupTime: 5
 --- !u!4 &1592733731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8681258338405525296, guid: 5ac58655a4a0c4abca3704f90847d328, type: 3}
@@ -33798,7 +33798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpBox: {fileID: 208636304}
   popUpText: {fileID: 2095756589}
-  Active: 0
+  popupTime: 5
 --- !u!4 &1938003154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 807165802869263851, guid: 3c670869df81741c8a9a47ac8d80618a, type: 3}

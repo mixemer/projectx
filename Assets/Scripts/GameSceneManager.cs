@@ -54,7 +54,7 @@ public class GameSceneManager : MonoBehaviour
         if(RemaininTimerSeconds < 0)
         {
             RemaininTimerSeconds = 0;
-            SceneManager.LoadScene("GameOverScene");
+            SceneManager.LoadScene("GameWinningScene");
             Time.timeScale = 0;
         }
     }
