@@ -23,9 +23,7 @@ public class Player : MonoBehaviour
     private int hp;
     private bool playerIsAlive = true;
 
-    public float hpDecreaseRate = 0.4f;
-
-
+    public float hpDecreaseRate = 2f;
 
     private void Awake()
     {
@@ -33,6 +31,7 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("Player: maxHP cannot be greater than minHP");
         }
+
     }
 
     void Start()
@@ -48,7 +47,7 @@ public class Player : MonoBehaviour
         UpdateCharacter(selectedOption);
 
         hp = maxHP;
-        InvokeRepeating("DecreaseHP", 1f, hpDecreaseRate);
+        InvokeRepeating("DecreaseHP", hpDecreaseRate, hpDecreaseRate);
     }
 
     // GETTERS AND SETTERS //

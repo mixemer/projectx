@@ -9,6 +9,9 @@ TagManager:
   - TopEdge
   - TrashIsland
   - TopColliderForPeople
+  - ScoreText
+  - LevelManager
+  - KillSound
   layers:
   - Default
   - TransparentFX
