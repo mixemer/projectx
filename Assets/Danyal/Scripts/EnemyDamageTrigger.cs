@@ -15,6 +15,6 @@ public class EnemyDamageTrigger : MonoBehaviour
 
     private void EndScene()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene("GameOverScene");
     }
 }
