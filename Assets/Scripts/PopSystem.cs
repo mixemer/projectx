@@ -47,7 +47,7 @@ public class PopSystem : MonoBehaviour
 
             Active = true;
 
-            StartCoroutine(PopupDelay());
+            //StartCoroutine(PopupDelay());
         }
     }
 
