@@ -76,7 +76,9 @@ namespace NotSlot.HandPainted2D
       }
 
       myTransform.position = pos;
-    }
+            if (speed < 0) transform.rotation = Quaternion.Euler(0, 0, 0);
+            else transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
 
     private void OnDrawGizmosSelected ()
     {
