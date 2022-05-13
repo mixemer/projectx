@@ -82,7 +82,7 @@ namespace NotSlot.HandPainted2D
 
     private void OnDrawGizmosSelected ()
     {
-      Gizmos.color = Color.yellow;
+      Gizmos.color = Color.red;
 
       Vector3 from = new Vector3(leftWorldX, transform.position.y - 1);
       Vector3 to = new Vector3(leftWorldX, transform.position.y + 1);

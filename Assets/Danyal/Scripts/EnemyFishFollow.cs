@@ -12,6 +12,7 @@ public class EnemyFishFollow : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     public float moveSpeed = 5f;
+    public float rotationSped = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class EnemyFishFollow : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
     }
 
+    public Vector3 direction;
     private void Update()
     {
         // Check if player is near the enemy
@@ -48,9 +50,10 @@ public class EnemyFishFollow : MonoBehaviour
 
         if (isInRange)
         {
-            Vector3 direction = player.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 180;
+            direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + (transform.rotation.y == 0 ? -180 : 0);
             rb.rotation = angle;
+
             direction.Normalize();
             movement = direction;
         }
