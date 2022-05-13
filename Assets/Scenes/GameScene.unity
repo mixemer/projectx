@@ -26885,7 +26885,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -5.3908067, y: 3.900173}
+  - {x: -5.473527, y: 3.122878}
+  - {x: -5.1358137, y: 3.8886235}
   - {x: -4.0129538, y: 3.9800887}
   - {x: -1.67738, y: 3.9770103}
   - {x: -1.0923275, y: 3.9840326}
@@ -47581,12 +47582,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'How to play:
+  m_text: 'How to play
 
-    You can use W,A,S,D or arrow keys to move the fish.
+    You can use W-A-S-D or arrow keys to move the fish
 
 
-    Details:
+    Details
 
     You
     as a fish live in the ocean, you need to survive. Your HP decreases slowly. To
@@ -47596,8 +47597,8 @@ MonoBehaviour:
     You need to stay
     away from predator fish which are big and will try to eat you.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e78f1d41a6a53d45889d7772dd0d976, type: 2}
-  m_sharedMaterial: {fileID: 4682267454824933955, guid: 6e78f1d41a6a53d45889d7772dd0d976, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -47829,7 +47830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3234667466989148219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48023,10 +48024,10 @@ RectTransform:
   m_Father: {fileID: 3234667466821083956}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 710, y: -107.12365}
-  m_SizeDelta: {x: 1320, y: 114.2473}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3234667467237299319
 GameObject:
