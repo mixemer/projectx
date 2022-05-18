@@ -4,7 +4,7 @@
 
 Serious Game Project | First Submission | Teaching Goals
 
-Group 8: Mohammed Hossain, Daanyal, Javed Mehmet, Sahin, Jinwei Shao
+Group 8: Mohammed Hossain, Daanyal Javed, Mehmet Sahin, Jinwei Shao
 
 Teaching Goal: To teach users about different types of human-generated pollution that appears in the sea and its influence on marine life as a consequence.
 
