@@ -1,4 +1,4 @@
-# projectx
+# Aquatic Ruination
 
 ## A video game created using Unity and C#
 
