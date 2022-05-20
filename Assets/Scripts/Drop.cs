@@ -7,13 +7,13 @@ public class Drop : MonoBehaviour
     public bool isFood = true;
     public bool canFloat = false;
     Rigidbody2D body;
-    Score score;
+    ScoreManager score;
 
     SoundEffects sfx;
 
     private void Awake()
     {
-        score = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Score>();
+        score = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<ScoreManager>();
         sfx = GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffects>();
     }
 

@@ -5,11 +5,11 @@ using TMPro;
 
 public class HighScoreUI : MonoBehaviour
 {
-    private int score1;
-    private int score2;
-    private int score3;
-    private int score4;
-    private int score5;
+    private Score score1;
+    private Score score2;
+    private Score score3;
+    private Score score4;
+    private Score score5;
 
     private TextMeshProUGUI score1Text;
     private TextMeshProUGUI score2Text;
@@ -20,11 +20,11 @@ public class HighScoreUI : MonoBehaviour
 
     private void Awake()
     {
-        score1 = PlayerPrefs.GetInt("highScore1", 0);
-        score2 = PlayerPrefs.GetInt("highScore2", 0);
-        score3 = PlayerPrefs.GetInt("highScore3", 0);
-        score4 = PlayerPrefs.GetInt("highScore4", 0);
-        score5 = PlayerPrefs.GetInt("highScore5", 0);
+        score1 = new Score("highscore1");
+        score2 = new Score("highscore2");
+        score3 = new Score("highscore3");
+        score4 = new Score("highscore4");
+        score5 = new Score("highscore5");
 
         score1Text = GameObject.FindGameObjectWithTag("HighScore1").GetComponent<TextMeshProUGUI>();
         score2Text = GameObject.FindGameObjectWithTag("HighScore2").GetComponent<TextMeshProUGUI>();
@@ -34,10 +34,10 @@ public class HighScoreUI : MonoBehaviour
     }
     void Start()
     {
-        score1Text.text = score1.ToString("000000");
-        score2Text.text = score2.ToString("000000");
-        score3Text.text = score3.ToString("000000");
-        score4Text.text = score4.ToString("000000");
-        score5Text.text = score5.ToString("000000");
+        score1Text.text = score1.GetValue().ToString("000000");
+        score2Text.text = score2.GetValue().ToString("000000");
+        score3Text.text = score3.GetValue().ToString("000000");
+        score4Text.text = score4.GetValue().ToString("000000");
+        score5Text.text = score5.GetValue().ToString("000000");
     }
 }
