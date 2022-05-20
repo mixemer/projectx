@@ -9,9 +9,12 @@ public class Drop : MonoBehaviour
     Rigidbody2D body;
     Score score;
 
+    SoundEffects sfx;
+
     private void Awake()
     {
         score = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Score>();
+        sfx = GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffects>();
     }
 
     // Start is called before the first frame update
@@ -40,9 +43,11 @@ public class Drop : MonoBehaviour
             if (isFood)
             {
                 score.increaseScore();
+                sfx.playFood();
             } else
             {
                 score.decreaseScore();
+                sfx.playTrash();
             }
 
 

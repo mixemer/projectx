@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     public float hpDecreaseRate = 2f;
 
+    private SoundEffects sfx;
+
     private void Awake()
     {
         if (minHP > maxHP)
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour
             Debug.LogError("Player: maxHP cannot be greater than minHP");
         }
 
+        sfx = GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffects>();
     }
 
     void Start()
@@ -121,7 +124,8 @@ public class Player : MonoBehaviour
             playerIsAlive = false;
             GameObject go = Instantiate(killEffect, transform.position, Quaternion.identity);
             go.transform.localScale = new Vector3(5, 5, 1);
-            Destroy(gameObject);
+            sfx.playKilled();
+            gameObject.SetActive(false);
         }
     }
 
