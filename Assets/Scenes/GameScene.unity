@@ -9994,6 +9994,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1169567364856762407, guid: 56b68e5e4c0d6a6459061fd0c36b06d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169567364856762407, guid: 56b68e5e4c0d6a6459061fd0c36b06d4, type: 3}
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -15353,7 +15357,7 @@ MonoBehaviour:
   killEffect: {fileID: 3837422737026368843, guid: 600773de602024ab8aeaab3262dacb72, type: 3}
   characterDB: {fileID: 11400000, guid: 3b2603e1dda971548b4cb13b6125708e, type: 2}
   artworkSprite: {fileID: 500595046}
-  hpDecreaseRate: 0.3
+  hpDecreaseRate: 0.5
 --- !u!114 &500595052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15885,9 +15889,9 @@ MonoBehaviour:
   - {fileID: 6029430420206594747, guid: 681bd21e824fb2a4b8029d1f94ed18d8, type: 3}
   - {fileID: 1861938646066598498, guid: aa0237b4c2769d34a92c4b06a83a1fc1, type: 3}
   - {fileID: 3740174653031465032, guid: 60cff07170508c24aaab19011504ca51, type: 3}
-  spawnDelayAtBeginning: 5
-  spawnDelayAtMid: 2
-  spawnDelayAtEnding: 0.2
+  spawnDelayAtBeginning: 3
+  spawnDelayAtMid: 1
+  spawnDelayAtEnding: 0.3
 --- !u!61 &535795395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27479,7 +27483,7 @@ MonoBehaviour:
   player: {fileID: 500595051}
   midLevelPanel: {fileID: 2139306208}
   endingLevelPanel: {fileID: 1666915501}
-  GameTimer: 1
+  GameTimer: 2
   RemaininTimerSeconds: 0
   gameStage: 0
 --- !u!4 &1066486474 stripped
@@ -28410,6 +28414,10 @@ PrefabInstance:
     - target: {fileID: 85172168249144409, guid: 56b68e5e4c0d6a6459061fd0c36b06d4, type: 3}
       propertyPath: speed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169567364856762407, guid: 56b68e5e4c0d6a6459061fd0c36b06d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1169567364856762407, guid: 56b68e5e4c0d6a6459061fd0c36b06d4, type: 3}
       propertyPath: moveSpeed
@@ -39387,9 +39395,9 @@ MonoBehaviour:
   - {fileID: 1948900121205188248, guid: 780b6631f3265b842add13a1a0156216, type: 3}
   - {fileID: 521587134165723343, guid: 327bee06d99441b4e9f4ca975f22b061, type: 3}
   - {fileID: 2582071716448697090, guid: 0d19b09c36ec6a544a869d981877f7f2, type: 3}
-  spawnDelayAtBeginning: 0.2
-  spawnDelayAtMid: 2
-  spawnDelayAtEnding: 5
+  spawnDelayAtBeginning: 0.3
+  spawnDelayAtMid: 1
+  spawnDelayAtEnding: 3
 --- !u!61 &2041011293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40978,6 +40986,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1512675318476569367, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512675318476569367, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -41030,6 +41042,10 @@ PrefabInstance:
       value: -13.320002
       objectReference: {fileID: 0}
     - target: {fileID: 3186807421330414014, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186807421330414014, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -41056,6 +41072,10 @@ PrefabInstance:
     - target: {fileID: 3535810464196634461, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
       propertyPath: m_Offset.y
       value: 0.07880831
+      objectReference: {fileID: 0}
+    - target: {fileID: 3830206069877095221, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3830206069877095221, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
       propertyPath: moveSpeed
@@ -41108,6 +41128,10 @@ PrefabInstance:
     - target: {fileID: 5914516119922115131, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
       propertyPath: m_Offset.y
       value: -0.36666846
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979567056807712557, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5979567056807712557, guid: ae10bc0d86c925d4cbe9fac86b2dbb35, type: 3}
       propertyPath: moveSpeed
