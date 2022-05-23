@@ -14,16 +14,21 @@ public class EnemyFishFollow : MonoBehaviour
     public float moveSpeed = 5f;
     public float rotationSped = 5f;
 
+    Player playerScript;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        playerScript = player.GetComponent<Player>();
         rb = this.GetComponent<Rigidbody2D>();
     }
 
     public Vector3 direction;
     private void Update()
     {
+        if (!playerScript.IsAlive()) return;
+
         // Check if player is near the enemy
         float dist = Vector2.Distance(player.transform.position, transform.position);
 
