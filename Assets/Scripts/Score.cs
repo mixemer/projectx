@@ -13,7 +13,6 @@ public class Score : ScriptableObject
 
     public void SetValue(int score)
     {
-        Debug.Log(playerPrefsScore + ": " + score);
         PlayerPrefs.SetInt(playerPrefsScore, score);
     }
 

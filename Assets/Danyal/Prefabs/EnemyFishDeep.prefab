@@ -117,7 +117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceBeforeAttacking: 12
-  moveSpeed: 4
+  moveSpeed: 2
+  rotationSped: 3
+  direction: {x: 0, y: 0, z: 0}
 --- !u!61 &7932640177293396898
 BoxCollider2D:
   m_ObjectHideFlags: 0
