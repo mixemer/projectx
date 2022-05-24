@@ -16036,9 +16036,9 @@ MonoBehaviour:
   - {fileID: 6029430420206594747, guid: 681bd21e824fb2a4b8029d1f94ed18d8, type: 3}
   - {fileID: 1861938646066598498, guid: aa0237b4c2769d34a92c4b06a83a1fc1, type: 3}
   - {fileID: 3740174653031465032, guid: 60cff07170508c24aaab19011504ca51, type: 3}
-  spawnDelayAtBeginning: 3
-  spawnDelayAtMid: 1
-  spawnDelayAtEnding: 0.3
+  spawnDelayAtBeginning: 1.5
+  spawnDelayAtMid: 0.5
+  spawnDelayAtEnding: 0.2
 --- !u!61 &535795395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39398,7 +39398,7 @@ MonoBehaviour:
   - {fileID: 2582071716448697090, guid: 0d19b09c36ec6a544a869d981877f7f2, type: 3}
   spawnDelayAtBeginning: 0.3
   spawnDelayAtMid: 1
-  spawnDelayAtEnding: 3
+  spawnDelayAtEnding: 2
 --- !u!61 &2041011293
 BoxCollider2D:
   m_ObjectHideFlags: 0
