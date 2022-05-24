@@ -2,6 +2,8 @@
 
 ## A video game created using Unity and C#
 
+### Link: https://itch.io/jam/spring-2022-final-project-submission/rate/1544212
+
 Serious Game Project | First Submission | Teaching Goals
 
 Group 8: Mohammed Hossain, Daanyal Javed, Mehmet Sahin, Jinwei Shao
