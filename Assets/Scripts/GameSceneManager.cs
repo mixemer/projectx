@@ -39,9 +39,9 @@ public class GameSceneManager : MonoBehaviour
     {
         StartGamePanel.SetActive(true);
         EndGamePanel.SetActive(false);
-        RemaininTimerSeconds = GameTimer * 60;
+        RemaininTimerSeconds = GameTimer;
 
-        int GameTimerSeconds = GameTimer * 60;
+        int GameTimerSeconds = GameTimer;
 
         start = GameTimerSeconds - GameTimerSeconds / 3;
         mid = GameTimerSeconds - GameTimerSeconds / 3 - GameTimerSeconds / 3;

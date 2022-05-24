@@ -1,49 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class Score : MonoBehaviour
+public class Score : ScriptableObject
 {
-    public int baseScoreIncrease = 10;
-    public int baseScoreDecrease = 10;
+    private string playerPrefsScore;
 
-    private int score;
-
-    private TextMeshProUGUI scoreText;
-
-    public void Awake()
+    public Score(string playerPrefsScore)
     {
-        PlayerPrefs.SetInt("score", 0);
-        scoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TextMeshProUGUI>();
+        this.playerPrefsScore = playerPrefsScore;
     }
 
-    public void increaseScore()
+    public void SetValue(int score)
     {
-        score += baseScoreIncrease;
-        saveScore();
-        updateScoreText();
+        Debug.Log(playerPrefsScore + ": " + score);
+        PlayerPrefs.SetInt(playerPrefsScore, score);
     }
 
-    public void decreaseScore()
+    public int GetValue()
     {
-        score -= baseScoreDecrease;
-        saveScore();
-        updateScoreText();
-    }
-
-    public int getScore()
-    {
-        return score;
-    }
-
-    private void updateScoreText()
-    {
-        scoreText.text = PlayerPrefs.GetInt("score", 0).ToString("000000");
-    }
-
-    private void saveScore()
-    {
-        PlayerPrefs.SetInt("score", score);
+        return PlayerPrefs.GetInt(playerPrefsScore, 0);
     }
 }

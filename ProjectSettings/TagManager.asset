@@ -11,7 +11,12 @@ TagManager:
   - TopColliderForPeople
   - ScoreText
   - LevelManager
-  - KillSound
+  - SoundEffects
+  - HighScore1
+  - HighScore2
+  - HighScore3
+  - HighScore4
+  - HighScore5
   layers:
   - Default
   - TransparentFX
