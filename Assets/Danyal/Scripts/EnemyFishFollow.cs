@@ -27,7 +27,7 @@ public class EnemyFishFollow : MonoBehaviour
     public Vector3 direction;
     private void Update()
     {
-        if (!playerScript.IsAlive()) return;
+        /*if (!playerScript.IsAlive()) return;*/
 
         // Check if player is near the enemy
         float dist = Vector2.Distance(player.transform.position, transform.position);

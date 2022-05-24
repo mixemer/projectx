@@ -52,7 +52,7 @@ public class Drop : MonoBehaviour
 
 
             // update health
-            collision.GetComponent<Player>().Heal(isFood ? 5 : -2);
+            collision.GetComponent<Player>().Heal(isFood ? 6 : -5);
             Destroy(gameObject);
         }
     }
