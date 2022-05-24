@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
         {
             playerIsAlive = false;
             GameObject go = Instantiate(killEffect, transform.position, Quaternion.identity);
-            go.transform.localScale = new Vector3(5, 5, 1);
+            go.transform.localScale = new Vector3(10, 10, 1);
             sfx.playKilled();
             gameObject.SetActive(false);
         }
